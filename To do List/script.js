@@ -51,3 +51,23 @@ function deleteTask(id) {
     console.log('📊 Total tugas:', totalTugas);
     console.log('📋 Isi array:', tasksArray);
 }
+
+const apiURL = 'https://dummyjson.com/todos?limit=5';
+fetch(apiURL)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Jaringan bermasalah, gagal mengambil data!');
+        }
+        return response.json();
+    })
+    
+const mappedTasks = {
+    id: `card-${taskCounter}`,
+    title: item.todo,
+    desc: `This tasks is dynamically retrieved from DummyJSON API server. Task ID reference: ${item.id}`,
+    date: randomDate,
+    urggency: randomUrgency,
+    status: kabanStatus
+}
+
+tasksListArray.push(mappedTasks);
