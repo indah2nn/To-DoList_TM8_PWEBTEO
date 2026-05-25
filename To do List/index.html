@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Task Card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2># Create New Task Card</h2>
+
+        <label>Task Title <span class="required">*</span></label>
+        <input type="text" id="title" placeholder="Add Tugas">
+
+        <label>Short Description</label>
+        <textarea id="desc" rows="3" placeholder="Subdeskripsi tugas"></textarea>
+
+        <label>Due Date</label>
+        <input type="date" id="due-date" value="2026-05-24">
+
+        <label>Urgency Level</label>
+        <select id="urgency">
+            <option>High</option>
+            <option selected>Medium</option>
+            <option>Low</option>
+        </select>
+
+        <label>Initial Position</label>
+        <select id="position">
+            <option>To-Do</option>
+            <option selected>In Progress</option>
+            <option>Done</option>
+        </select>
+
+        <button class="create-btn" onclick="createTask()">+ Create Task Card</button>
+    </div>
+
+    <div class="board" id="board">
+        <div class="col" data-urgency="High">
+            <h3>📋 To-Do</h3>
+            <div id="todo-list" class="task-list"></div>
+        </div>
+        <div class="col" data-urgency="Medium">
+            <h3>⚡ In Progress</h3>
+            <div id="progress-list" class="task-list"></div>
+        </div>
+        <div class="col" data-urgency="Low">
+            <h3>✅ Done</h3>
+            <div id="done-list" class="task-list"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

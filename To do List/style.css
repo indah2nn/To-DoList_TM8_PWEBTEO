@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f0f2f5;
+    padding: 30px;
+}
+
+/* Form Container */
+.form-container {
+    background: white;
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-container label {
+    display: block;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.required {
+    color: red;
+}
+
+.form-container input,
+.form-container textarea,
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.create-btn {
+    width: 100%;
+    background: #7e0e71;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.create-btn:hover {
+    background: #9b1a8a;
+}
+
+/* Kanban Board */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.col {
+    border-radius: 12px;
+    padding: 15px;
+    min-height: 400px;
+}
+
+.col[data-urgency="High"] {
+    background: #ffdddd;
+}
+
+.col[data-urgency="Medium"] {
+    background: #fff4e0;
+}
+
+.col[data-urgency="Low"] {
+    background: #e0ffe0;
+}
+
+.task-card {
+    background: white;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-left: 4px solid;
+}
+
+.task-card[data-urgency="High"] { border-left-color: #ff4444; }
+.task-card[data-urgency="Medium"] { border-left-color: #ffaa00; }
+.task-card[data-urgency="Low"] { border-left-color: #4CAF50; }
+
+.task-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.task-desc {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.task-date {
+    font-size: 11px;
+    color: #999;
+}
+
+.delete-btn {
+    background: #ff4444;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 11px;
+    margin-top: 8px;
+    cursor: pointer;
+}
