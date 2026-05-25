@@ -1,4 +1,5 @@
 let taskId = 0;
+let tasksArray = [];
 
 function createTask() {
     let title = document.getElementById('title').value;
@@ -32,6 +33,8 @@ function createTask() {
 
     targetList.appendChild(card);
 
+    tasksArray.push({ id: 'task-' + taskId, title: title, urgency: urgency, status: position });
+
     // Reset form
     document.getElementById('title').value = '';
     document.getElementById('desc').value = '';
@@ -41,4 +44,10 @@ function createTask() {
 function deleteTask(id) {
     let card = document.getElementById(id);
     if (card) card.remove();
+
+    tasksArray = tasksArray.filter(task => task.id !== id);
+
+    const totalTugas = tasksArray.reduce((total) => total + 1, 0);
+    console.log('📊 Total tugas:', totalTugas);
+    console.log('📋 Isi array:', tasksArray);
 }
